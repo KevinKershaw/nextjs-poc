@@ -63,9 +63,9 @@ const Home: NextPage = () => {
                                             <h3><a href="https://https://nextjs.org//" target="_blank" rel="noreferrer">Next JS</a></h3>
                                             This test harness tests the following:
                                             <ul>
-                                                <li><NLink href='/ssg/YieldCurve'><Link href='/'>SSG - Static Site Generation</Link></NLink></li>
-                                                <li><NLink href='/ssr/YieldCurve'><Link href='/'>SSR - Server Side Rendering</Link></NLink></li>
-                                                <li><NLink href='/csr/YieldCurve'><Link href='/'>CSR - Client Side Rendering</Link></NLink></li>
+                                                <li><NLink href='/ssg/YieldCurve' passHref><Link href='/'>SSG - Static Site Generation</Link></NLink></li>
+                                                <li><NLink href='/ssr/YieldCurve' passHref><Link href='/'>SSR - Server Side Rendering</Link></NLink></li>
+                                                <li><NLink href='/csr/YieldCurve' passHref><Link href='/'>CSR - Client Side Rendering</Link></NLink></li>
                                             </ul>
                                         </Box>
                                         {/* <br />

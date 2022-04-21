@@ -161,8 +161,8 @@ const EmmaFooter = () => {
                 <br />
                 <br />
                 Ratings data are provided by the following and are reprinted with permission, and copyright notices for the respective owners are as follows: Copyright © 2022, Fitch, Inc. All rights
-                reserved. Copyright © 2022, Kroll Bond Rating Agency, Inc., and/or its licensors and affiliates (together, "KBRA"). All rights reserved. Copyright © 2022, Moody's Corporation, Moody's
-                Investors Service, Inc., Moody's Analytics, Inc. and/or their licensors and affiliates (collectively, "MOODY'S"). All rights reserved. Copyright © 2022, Standard and Poor’s Financial
+                reserved. Copyright © 2022, Kroll Bond Rating Agency, Inc., and/or its licensors and affiliates (together, &quot;KBRA&quot;). All rights reserved. Copyright © 2022, Moody&apos;s Corporation, Moody&apos;s
+                Investors Service, Inc., Moody&apos;s Analytics, Inc. and/or their licensors and affiliates (collectively, &quot;MOODY&apos;S&quot;). All rights reserved. Copyright © 2022, Standard and Poor&apos;s Financial
                 Services LLC. All rights reserved.
                 <br />
                 <br />

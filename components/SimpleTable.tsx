@@ -6,15 +6,15 @@ function YTable({ rows, headers, width }: { rows: string[][]; headers: string[];
       <Table sx={{ width: width }} size='small' aria-label='simple table'>
         <TableHead>
           <TableRow>
-            {headers.map((header) => (
-              <TableCell align='center'>{header}</TableCell>
+            {headers.map((header, ix) => (
+              <TableCell key={ix} align='center'>{header}</TableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, ix) => (
             <TableRow key={ix}>
-                {row.map((r)=>(<TableCell align='center'>{r}</TableCell>))}
+                {row.map((r, ix2)=>(<TableCell key={`${ix}a${ix2}`} align='center'>{r}</TableCell>))}
             </TableRow>
           ))}
         </TableBody>
