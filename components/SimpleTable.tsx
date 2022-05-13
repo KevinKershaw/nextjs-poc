@@ -7,14 +7,20 @@ function YTable({ rows, headers, width }: { rows: string[][]; headers: string[];
         <TableHead>
           <TableRow>
             {headers.map((header, ix) => (
-              <TableCell key={ix} align='center'>{header}</TableCell>
+              <TableCell key={ix} align='center'>
+                {header}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row, ix) => (
             <TableRow key={ix}>
-                {row.map((r, ix2)=>(<TableCell key={`${ix}a${ix2}`} align='center'>{r}</TableCell>))}
+              {row.map((r, ix2) => (
+                <TableCell key={`${ix}a${ix2}`} align='center'>
+                  {r}
+                </TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>

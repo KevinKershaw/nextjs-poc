@@ -1,4 +1,4 @@
-import type {YieldCurveData} from 'lib/model'
+import type { YieldCurveData } from 'lib/model'
 
 const data: YieldCurveData = {
   rows: [
