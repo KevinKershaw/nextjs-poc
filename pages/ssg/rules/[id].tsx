@@ -1,21 +1,20 @@
 import { Box, Button, Container, Typography } from '@mui/material'
 import { DrupalNode } from 'next-drupal'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
-import router from 'next/router'
-import Layout from 'components/Layout'
 import { getArticle, getRules } from 'lib/drupalApi'
 import useSWR, { SWRConfig, unstable_serialize } from 'swr'
+import ArticleLayout from 'components/ArticleLayout'
 
 const cmsRefreshInterval = 20000
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let allArticles = await getRules()
-	let paths = allArticles.map((article) => `/ssg/rules/${article.id}`)
+  let paths = allArticles.map((article) => `/ssg/rules/${article.id}`)
 
-	return {
-		paths: paths,
+  return {
+    paths: paths,
     fallback: 'blocking',
-	}
+  }
 }
 const fetcher = async (url: string, id: string) => {
   let resp = await fetch(`${url}?id=${id}`)
@@ -23,17 +22,17 @@ const fetcher = async (url: string, id: string) => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	let id = context.params?.id as string
-	let article = await getArticle(id)
+  let id = context.params?.id as string
+  let article = await getArticle(id)
 
-	return {
-		props: {
+  return {
+    props: {
       fallback: {
         [unstable_serialize(['api', 'article', id])]: article,
       },
-			article,
-		},
-	}
+      article,
+    },
+  }
 }
 
 const Article = ({ fallbackData }: { fallbackData: DrupalNode }) => {
@@ -42,45 +41,24 @@ const Article = ({ fallbackData }: { fallbackData: DrupalNode }) => {
     refreshInterval: cmsRefreshInterval,
   })
   if (error) {
-	return (
-      <Layout>
-        <Container>unable to load article</Container>
-      </Layout>
-    )
+    return <ArticleLayout article={fallbackData} />
   }
+
   let article = data as DrupalNode
-  return (
-    <>
-			<Container>
-				<Typography>
-					<Button
-						variant='text'
-						sx={{ paddingLeft: '0px' }}
-						onClick={() => {
-							router.push('/ssg/rules')
-						}}>
-            &#8592; back
-					</Button>
-				</Typography>
-				<Typography variant='h5'>{article.attributes.title}</Typography>
-				<hr></hr>
-				<Typography variant='body1'>{article.attributes.body.summary}</Typography>
-				<Box dangerouslySetInnerHTML={{ __html: article.attributes.body.processed }}></Box>
-			</Container>
-    </>
-  )
+  if (!article) {
+    return <Container>loading content...</Container>
+  }
+  return <ArticleLayout article={article} />
 }
 
 const MsrbRule: NextPage<{ fallback: any; article: DrupalNode }> = ({ fallback, article }) => {
   return (
-    <Layout>
-      <Container>
-        <SWRConfig value={{ fallback }}>
-          <Article fallbackData={article} />
-        </SWRConfig>
-      </Container>
-    </Layout>
-	)
+    <Container>
+      <SWRConfig value={{ fallback }}>
+        <Article fallbackData={article} />
+      </SWRConfig>
+    </Container>
+  )
 }
 
 export default MsrbRule

@@ -1,10 +1,10 @@
-import { Divider, Link, Typography } from '@mui/material'
+import { Container, Divider, Link, Typography } from '@mui/material'
 import NLink from 'next/link'
 import React from 'react'
 
 const YieldCurves = () => {
   return (
-    <>
+    <Container>
       <Typography variant='h5'>Yield Curves and Indices</Typography>
       <Divider />
       <ul>
@@ -24,7 +24,7 @@ const YieldCurves = () => {
           </NLink>
         </li>
       </ul>
-    </>
+    </Container>
   )
 }
 

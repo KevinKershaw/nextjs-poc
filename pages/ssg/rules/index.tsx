@@ -5,8 +5,6 @@ import { getRules } from 'lib/drupalApi'
 import { DrupalNode } from 'next-drupal'
 import RulesTableLayout from 'components/RulesTableLayout'
 import useSWR, { SWRConfig } from 'swr'
-import Layout from 'components/Layout'
-import { Container, Typography, Button, Box } from '@mui/material'
 
 const cmsRefreshInterval = 20000
 
@@ -33,14 +31,9 @@ const Articles = ({ fallbackData }: { fallbackData: DrupalNode[] }) => {
   })
 
   if (error) {
-    return (
-      <Layout>
-        <Container>unable to load content</Container>
-      </Layout>
-    )
+    return <RulesTableLayout articles={fallbackData} renderType='ssg' />
   }
   let articles = data as DrupalNode[]
-
   return <RulesTableLayout articles={articles} renderType='ssg' />
 }
 
