@@ -6,7 +6,7 @@ const Band = () => {
     <Box sx={{ p: 8 }}>
       <Stack alignItems={'center'} spacing={4}>
         <Box>
-          <Typography variant='h3' fontWeight={'bold'}>
+          <Typography variant='h2'>
             Recently Traded Securities
           </Typography>
         </Box>

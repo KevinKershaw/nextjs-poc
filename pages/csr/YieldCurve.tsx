@@ -4,7 +4,7 @@ import type { YieldCurveData } from 'lib/model'
 import YieldCurveLayout from 'components/YieldCurveLayout'
 
 const YieldCurve: NextPage = () => {
-  const [data, setData] = React.useState<YieldCurveData>({ rows: [] })
+  const [data, setData] = React.useState<YieldCurveData>({ curve_date: 'date', items: [] })
 
   React.useEffect(() => {
     const fn = async () => {

@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const list2 = await getTxs('pg-yc-bw-2:')
   return {
     props: {
-      data: {rows: []},
+      data: {items: []},
       list1,
       list2
     },

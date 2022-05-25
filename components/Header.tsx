@@ -68,7 +68,6 @@ const EmmaHeader = () => {
             <Toolbar
               sx={{
                 width: '100%',
-               // maxWidth: 1200,
                 mx: 'auto',
                 py: 1,
               }}

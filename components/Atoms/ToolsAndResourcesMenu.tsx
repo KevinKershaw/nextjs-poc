@@ -32,7 +32,7 @@ const ToolsAndResourcesMenu = () => {
         }}>
         <MenuItem
           onClick={() => {
-            handleMenuClick('/YieldCurves')
+            handleMenuClick('/yield-curves')
           }}>
           Yield Curves and Indices
         </MenuItem>

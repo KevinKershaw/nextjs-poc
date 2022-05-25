@@ -13,13 +13,13 @@ const BlueBand = () => {
 
   return (
     <Box className={classes.blueGradient} sx={{ p: 5 }}>
-      <Container maxWidth='lg'>
-        <Stack direction='row' spacing={4} justifyContent='center'>
-          <Container>
+      <Container maxWidth={false}>
+        <Stack direction='row' justifyContent='center'>
+          <Container maxWidth={false}>
             <Typography variant='h1' color='white' gutterBottom>
               The Official Source for Municipal Securities Data and Documents
             </Typography>
-            <Typography variant='h5' fontWeight={'normal'} color='white'>
+            <Typography variant='h3' color='white' gutterBottom>
               Provided by the Municipal Securities Rulemaking Board
             </Typography>
             <Stack direction='row' spacing={2} justifyContent='left' mt={3}>

@@ -31,15 +31,15 @@ const YieldCurveChart: React.FunctionComponent<{ data: YieldCurveData }> = ({ da
   };
 
   const ChartWrapper = styled(Container)`
-    width: 90%;
+    width: 100%;
   `;
   return (
-    <ChartWrapper>
+    <Container maxWidth='md'>
       <Line data={chartCfg} options={lineChartOptions} />
       <Typography color='gray' sx={{ textAlign: 'center' }}>
         years to maturity
       </Typography>
-    </ChartWrapper>
+    </Container>
   );
 };
 

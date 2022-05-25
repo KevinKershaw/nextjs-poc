@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <Container>
+    <Container sx={{ width: '100%', maxWidth: '1440px !important', margin: 'auto'}}>
       <Paper elevation={4} sx={{ px: 0 }}>
         <Header />
         <Box sx={{ minHeight: '600px' }}>{children}</Box>

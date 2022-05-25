@@ -5,16 +5,16 @@ const Band = () => {
   return (
     <DarkMode>
       <Stack direction={'row'} spacing={8} p={8} sx={{ backgroundColor: '#00263a' }}>
-        <Box sx={{ width: '30%', minWidth: 200 }}>
-          <Typography variant='h3' fontWeight={'bold'} color='primary'>
-            <b>Browse Securities</b>
+        <Box sx={{ width: '45%', minWidth: 260 }}>
+          <Typography variant='h1' color='primary' gutterBottom>
+            Browse Securities
           </Typography>
-          <Typography variant='h6' color='primary'>
+          <Typography variant='h3' color='primary'>
             Search municipal securities to the right via keyword or filter.
           </Typography>
         </Box>
-        <Box sx={{ width: '70%', minWidth: 240 }}>
-          <Grid container spacing={2} xs={12} align-items='center'>
+        <Box sx={{ width: '65%', minWidth: 240 }}>
+          <Grid container spacing={2} align-items='center'>
             <Grid item xs={12}>
               <TextField
                 size='small'
@@ -37,7 +37,10 @@ const Band = () => {
               </Typography>
             </Grid>
             <Grid item xs={4}>
-              <TextField size='small' color='primary' select label='Search by Sector' sx={{ width: 200 }}>
+              <TextField size='small' color='primary' select label='Search by Sector' sx={{ width: 200 }} value=''>
+                <MenuItem key={'key0'} value={''}>
+                  {''}
+                </MenuItem>
                 <MenuItem key={'key1'} value={'val1'}>
                   {'Option 1'}
                 </MenuItem>
@@ -50,7 +53,7 @@ const Band = () => {
               </TextField>
             </Grid>
             <Grid item xs={4}>
-              <TextField size='small' color='primary' select label='Search by Source of Repayment' sx={{ width: 200, '& input': { backgroundColor: 'white' } }}>
+              <TextField size='small' color='primary' select label='Search by Source of Repayment' sx={{ width: 200, '& input': { backgroundColor: 'white' } }} >
                 <MenuItem key={'key1'} value={'val1'}>
                   {'Option 1'}
                 </MenuItem>
@@ -63,7 +66,7 @@ const Band = () => {
               </TextField>
             </Grid>
             <Grid item xs={4}>
-              <TextField size='small' color='primary' select label='Search by Tax Status' sx={{ width: 200, '& input': { backgroundColor: 'white' } }}>
+              <TextField size='small' color='primary' select label='Search by Tax Status' sx={{ width: 200, '& input': { backgroundColor: 'white' } }} >
                 <MenuItem key={'key1'} value={'val1'}>
                   {'Option 1'}
                 </MenuItem>

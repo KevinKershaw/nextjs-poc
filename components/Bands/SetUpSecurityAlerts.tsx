@@ -4,7 +4,7 @@ const Band = () => {
   return (
     <Box sx={{ px: 8, pt: 0, pb: 8 }}>
       <Stack alignItems={'center'} spacing={4}>
-        <Typography variant='h3' fontWeight={'bold'} textAlign='center'>
+        <Typography variant='h2' textAlign='center'>
           Sign In to EMMA Now to
           <br />
           Set Up Security Alerts

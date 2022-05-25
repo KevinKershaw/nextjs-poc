@@ -11,12 +11,13 @@ export const H1: ComponentStory<typeof YieldCurveLayout> = () => {
   return (
     <YieldCurveLayout
       data={{
-        rows: [
-          { yearsToMaturity: 1, yield: 0.52 },
-          { yearsToMaturity: 2, yield: 0.61 },
-          { yearsToMaturity: 3, yield: 0.66 },
-          { yearsToMaturity: 4, yield: 0.71 },
-          { yearsToMaturity: 5, yield: 0.72 },
+        curve_date: 'date',
+        items: [
+          { yearstomaturity: 1, yield: 0.52 },
+          { yearstomaturity: 2, yield: 0.61 },
+          { yearstomaturity: 3, yield: 0.66 },
+          { yearstomaturity: 4, yield: 0.71 },
+          { yearstomaturity: 5, yield: 0.72 },
         ],
       }}
     />
