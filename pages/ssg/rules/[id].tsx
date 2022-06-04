@@ -32,6 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       },
       article,
     },
+    revalidate: 20,
   }
 }
 

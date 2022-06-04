@@ -22,6 +22,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         '/api/MSRBRules': ruleArticles,
       },
     },
+    revalidate: 20,
   }
 }
 const Articles = ({ fallbackData }: { fallbackData: DrupalNode[] }) => {

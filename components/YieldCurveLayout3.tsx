@@ -1,41 +1,51 @@
+import Image from 'next/image'
 import React from 'react'
 import router from 'next/router'
 import type { YieldCurveData } from 'lib/model'
 import { Box, Button, Card, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material'
-import SimpleTable from './SimpleTable'
+import FoldedTable from './FoldedTable'
 import { TxData } from 'lib/getTxs'
 import { TxList } from 'components/Tx'
-import { foldTable } from 'lib/foldTable'
 import YieldCurveChart from './Organisms/Charts/YieldCurveChart2'
+import bondwaveImage from 'assets/yc/logos/bondwave.png'
 
-const YieldCurveLayout = ({ data, list1, list2, list3 }: { data: YieldCurveData; list1: TxData[]; list2: TxData[]; list3: TxData[] }) => {
-  var adjData = foldTable(
-    ['Years', 'Yield'],
-    data.items.map((i) => [i.yearstomaturity.toString(), `${i.yield}%`]),
-    6,
-  )
-
+const YieldCurveLayout = ({ data, list1, list2, list3, list4 }: { data: YieldCurveData; list1: TxData[]; list2: TxData[]; list3: TxData[]; list4: TxData[] }) => {
   return (
     <>
-      <Box sx={{ minHeight: 500, mb: 3, mt: 1 }}>
-        <Card sx={{ mx: 4, py: 2, px:4, border: '1px lightgray solid' }} elevation={2}>
-          <Box>
-            <Button variant='text' onClick={() => { router.push('/yield-curves') }} > &#8592; Back </Button>
-            <TxList txs={list1} />
+      {/* <Button sx={{ height: 60, width: 200 }} variant='outlined' onClick={() => {}}> */}
+      {/* </Button> */}
+      <Box sx={{ minHeight: 500 }}>
+        <Box sx={{ mx: 5 }}>
+          <Button
+            variant='text'
+            onClick={() => {
+              router.push('/yield-curves')
+            }}
+          >
+            &#8592; Back
+          </Button>
+          <Box sx={{ pl: 0.5 }}>
+            <Image src={bondwaveImage} height={38} width={161} alt='BondWave' />
           </Box>
-          <Stack spacing={8} sx={{ mx: 10, mt: 4, mb: 10 }}>
-            <YieldCurveChart data={data} />
-            <SimpleTable rows={adjData.rows} headers={adjData.headers} width={1100} />
-          </Stack>
-          <Grid container direction={'row'} gridTemplateColumns={'1fr 2fr'} wrap={'nowrap'} sx={{ borderTop: '1px solid lightgray', marginTop: 0.5, backgroundColor: '#ccecfc', px: 4, py: 2 }}>
-            <Grid item minWidth={400}>
-              <TxList txs={list2} />
-            </Grid>
-            <Grid>
-              <TxList txs={list3} />
-            </Grid>
-          </Grid>
-        </Card>
+          <TxList txs={list1} />
+        </Box>
+        <Stack spacing={8} sx={{ mx: 5, mt: 4, mb: 6 }}>
+          <YieldCurveChart data={data} />
+          <Box sx={{ minHeight: 203 }}>
+            <FoldedTable data={data} />
+          </Box>
+        </Stack>
+        <Box display={'flex'} sx={{ borderTop: '1px solid lightgray', backgroundColor: '#ccecfc', px: 5, py: 3, gap: 4, flexDirection: { lg: 'row', xs: 'column' } }}>
+          <Box minWidth={{ lg: 350, xs: 'unset' }}>
+            <TxList txs={list2} />
+          </Box>
+          <Box minWidth={{ lg: 425, xs: 'unset' }}>
+            <TxList txs={list3} />
+          </Box>
+        </Box>
+        <Box sx={{ marginTop: 0.5, px: 5, py: 2 }}>
+          <TxList txs={list4} />
+        </Box>
       </Box>
     </>
   )

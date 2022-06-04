@@ -1,6 +1,6 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
-function YTable({ rows, headers, width }: { rows: string[][]; headers: string[]; width: number }) {
+function YTable({ rows, headers, width }: { rows: string[][]; headers: string[]; width: number | string }) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ width: width }} size='small' aria-label='simple table'>

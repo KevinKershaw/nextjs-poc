@@ -36,6 +36,7 @@ const YieldCurveLayout = ({ data }: { data: YieldCurveData }) => {
   }
 
   var adjData = foldTable(['Years', 'Yield'], data.items.map((i) => [i.yearstomaturity.toString(), `${i.yield}%`]), 6)
+ 
 
   return (
     <>

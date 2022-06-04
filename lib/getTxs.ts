@@ -16,26 +16,33 @@ export interface TxData {
 }
 
 export async function getTxs(pgName: string): Promise<TxData[]> {
-  const client = strapiClient()
-  const { data } = await client.query({
-    query: gql`
-      query getTxs($name: String!) {
-        txs(filters: { name: { contains: $name } }, sort: "order") {
-          data {
-            id
-            attributes {
-              name
-              order
-              variant
-              text
-              gutterBottom
-              href
+  try {
+
+    const client = strapiClient()
+    const { data } = await client.query({
+      query: gql`
+        query getTxs($name: String!) {
+          txs(filters: { name: { contains: $name } }, sort: "order") {
+            data {
+              id
+              attributes {
+                name
+                order
+                variant
+                text
+                gutterBottom
+                href
+              }
             }
           }
         }
-      }
-    `,
-    variables: { name: pgName },
-  })
-  return data.txs.data as TxData[]
+      `,
+      variables: { name: pgName },
+    })
+    return data.txs.data as TxData[]
+
+  } catch (e: any) {
+    console.log('getTxs', 'e', e)
+  }
+  return [] as TxData[]
 }

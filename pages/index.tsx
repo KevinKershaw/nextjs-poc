@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import { Stack } from '@mui/material'
-import { TopBand, DevFeatures } from 'components/Home'
+import TopBand from 'components/Bands/home/TopBand'
+import AboutTech from 'components/Bands/home/AboutTech'
 
 const Home: NextPage = () => {
   return (
     <>
       <Stack spacing={3}>
         <TopBand />
-        <DevFeatures />
+        <AboutTech />
       </Stack>
     </>
   )

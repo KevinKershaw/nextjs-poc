@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import router from 'next/router'
+import { isLoggedIn } from 'lib/auth'
 import { AppBar, Box, Button, Container, Grid, IconButton, InputAdornment, Menu, MenuItem, TextField, Toolbar, useScrollTrigger, Link, Typography } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MenuIcon from '@mui/icons-material/Menu'
-import { isLoggedIn } from 'lib/auth'
-import useRouter from 'next/router'
 import Image from 'next/image'
 import NLink from 'next/link'
 import Head from 'next/head'
-import ToolsAndResourcesMenu from './Atoms/ToolsAndResourcesMenu'
 
+// NOTE: as of 6/3, doesn't seem to do much
 // This is used to make the header stick to the top
 function ElevationScroll({ children, setElevationEffect }: { children: React.ReactElement<any>, setElevationEffect: (val: boolean) => void }) {
   // const trigger = useScrollTrigger({
@@ -26,7 +26,6 @@ const EmmaHeader = () => {
   const [anchorEl, setAnchorEl] = React.useState<(EventTarget & HTMLButtonElement) | null>(null)
   const [isSignedIn, setIsSignedIn] = useState<boolean | null>(null)
   const [elevationEffect, setElevationEffect] = useState(false)
-  const router = useRouter
   const open = Boolean(anchorEl)
 
   const bodyScrolled = useScrollTrigger({
@@ -49,10 +48,7 @@ const EmmaHeader = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  /**
-   * TODO: When the below is uncommented, it enters an infinite loop
-   * @param {} location
-   */
+
   const handleMenuClick = (location: string) => {
     setAnchorEl(null)
     router.push(location)
@@ -73,8 +69,8 @@ const EmmaHeader = () => {
               }}
             >
               <>
-                <Grid container columns={{ xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }} justifyContent='space-between' alignItems='center'>
-                  <Grid item></Grid>
+                <Grid container columns={3} justifyContent='space-between' alignItems='center'>
+                  {/* <Grid item>hi mom</Grid> */}
                   <Grid item>
                     <Grid container alignItems='center' spacing={1}>
                       <Grid
@@ -92,41 +88,19 @@ const EmmaHeader = () => {
                       >
                         <Box>
                           <IconButton id='nav-button' color='primary' onClick={handleClick}>
-                            <MenuIcon />
+                            <MenuIcon fontSize='large' />
                           </IconButton>
                           <Menu
                             id='nav-menu'
                             anchorEl={anchorEl}
                             open={open}
                             onClose={handleClose}
-                            MenuListProps={{
-                              'aria-labelledby': 'nav-button',
-                            }}
+                            MenuListProps={{ 'aria-labelledby': 'nav-button', }}
                           >
-                            <MenuItem
-                              onClick={() => {
-                                handleMenuClick('/')
-                              }}
-                            >
-                              Market Data
-                            </MenuItem>
-                            <MenuItem>
-                              <ToolsAndResourcesMenu />
-                            </MenuItem>
-                            <MenuItem
-                              onClick={() => {
-                                handleMenuClick('/clientFetch')
-                              }}
-                            >
-                              About
-                            </MenuItem>
-                            <MenuItem
-                              onClick={() => {
-                                handleMenuClick('/ssr')
-                              }}
-                            >
-                              Support
-                            </MenuItem>
+                            <MenuItem onClick={() => handleMenuClick('/market-data')} >Market Data</MenuItem>
+                            <MenuItem onClick={() => handleMenuClick('/market-intelligence')} >Market Intelligence</MenuItem>
+                            <MenuItem onClick={() => handleMenuClick('/about')} >About</MenuItem>
+                            <MenuItem onClick={() => handleMenuClick('/support')} >Support</MenuItem>
                           </Menu>
                         </Box>
                       </Grid>
@@ -148,7 +122,7 @@ const EmmaHeader = () => {
                           >
                             <NLink href='/' passHref>
                               <Link>
-                                <Image priority src='/images/emma-logo.png' width={151} height={60} alt='Electronic Municpial Market Access' />
+                                <Image priority src='/images/emma-logo-sm.png' width={130} height={66} alt='EMMA Logo' />
                               </Link>
                             </NLink>
                           </Grid>
@@ -168,7 +142,7 @@ const EmmaHeader = () => {
                           >
                             <NLink href='/' passHref>
                               <Link>
-                                <Image priority src='/images/emma-logo.png' width={151} height={60} alt='Electronic Municpial Market Access' />
+                                <Image priority src='/images/emma-logo-sm.png' width={130} height={66} alt='EMMA Logo' />
                               </Link>
                             </NLink>
                           </Grid>
@@ -190,37 +164,18 @@ const EmmaHeader = () => {
                       },
                     }}
                   >
-                    <Grid container justifyContent='space-evenly' alignItems='center' columns={{ xs: 4, sm: 4, md: 4, lg: 4, xl: 4 }}>
+                    <Grid container justifyContent='space-evenly' alignItems='center' columns={4}>
                       <Grid item>
-                        <Button
-                          //onClick={() => { router.push("/") }}
-                          //color="secondary"
-                          variant='text'
-                        >
-                          Market Data
-                        </Button>
+                        <Button variant='text' onClick={() => router.push('/market-data')}>Market Data</Button>
                       </Grid>
                       <Grid item>
-                        <ToolsAndResourcesMenu />
+                        <Button variant='text' onClick={() => router.push('/market-intelligence')}>Market Intelligence</Button>
                       </Grid>
                       <Grid item>
-                        <Button
-                          //onClick={() => { router.push("/clientFetch") }}
-                          //color="secondary"
-                          variant='text'
-                        >
-                          About
-                        </Button>
+                        <Button variant='text' onClick={() => router.push('/about')}>About</Button>
                       </Grid>
                       <Grid item>
-                        <Button
-                          //onClick={() => { router.push("/ssr") }}
-                          //color="secondary"
-                          variant='text'
-                        >
-                          Support
-                        </Button>
-
+                        <Button variant='text' onClick={() => router.push('/support')}>Support</Button>
                       </Grid>
                     </Grid>
                   </Grid>

@@ -21,6 +21,7 @@ export async function getRules() {
   apiParams.addFilter('title', 'Rule%20G', 'STARTS_WITH')
   apiParams.addFields('node--article', ['id', 'title']).addSort('title')
   let url = `${drupalSite}node/article/?${apiParams.getQueryString({ encode: false })}`
+  //console.log(url)
   var resp = await fetch(url, {
     method: 'GET',
     headers: {
@@ -49,18 +50,17 @@ async function testGraphQL() {
   const client = drupalClient()
   const { data } = await client.query({
     query: gql`
-    query MyQuery {
-      articles(limit: 10) {
-        items {
-          title
-          id
+      query MyQuery {
+        articles(limit: 10) {
+          items {
+            title
+            id
+          }
         }
       }
-    }
-    `
+    `,
   })
   console.log(data)
   console.log(data.articles)
   console.log(data.articles.items)
-
 }

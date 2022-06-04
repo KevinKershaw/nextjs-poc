@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 
 const Band = () => {
   return (
@@ -11,7 +11,7 @@ const Band = () => {
           </Typography>
         </Box>
         <Box>
-          <Image src='/images/fake-trades.png' height={485} width={872} />
+          <Image src='/images/fake-trades.png' height={485} width={872} alt='Fake Data!' />
         </Box>
       </Stack>
     </Box>

@@ -20,8 +20,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id as string
   const data = await getYieldCurveData()
   const list1 = await getTxs(`pg-yc-${id}-head:`)
-  const list2 = await getTxs(`pg-yc-${id}-ref:`)
-  const list3 = await getTxs(`pg-yc-${id}-detail:`)
+  const list2 = await getTxs(`pg-yc-${id}-detail:`)
+  const list3 = await getTxs(`pg-yc-${id}-ref:`)
+  const list4 = await getTxs(`pg-yc-${id}-legal:`)
   return {
     props: {
       id: id,
@@ -29,12 +30,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
       list1,
       list2,
       list3,
+      list4
     },
   }
 }
 
-const ProviderData: NextPage<{ id: string; data: YieldCurveData; list1: TxData[]; list2: TxData[]; list3: TxData[] }> = ({ id, data, list1, list2, list3 }) => {
-  return <YieldCurveLayout data={data} list1={list1} list2={list2} list3={list3} />
+const ProviderData: NextPage<{ id: string; data: YieldCurveData; list1: TxData[]; list2: TxData[]; list3: TxData[]; list4: TxData[] }> = ({ id, data, list1, list2, list3, list4 }) => {
+  return <YieldCurveLayout data={data} list1={list1} list2={list2} list3={list3} list4={list4} />
 }
 
 export default ProviderData

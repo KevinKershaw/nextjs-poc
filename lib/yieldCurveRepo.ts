@@ -4,6 +4,8 @@ import Amplify from 'aws-amplify';
 import awsappsync from 'aws-exports';
 import * as queries from 'graphql/queries';
 
+
+
 Amplify.configure(awsappsync);
 
 // const data: YieldCurveData = {
@@ -41,18 +43,33 @@ Amplify.configure(awsappsync);
 //   ],
 // };
 
-export async function getYieldCurveData() {
-  const response: any = await API.graphql({
-    query: queries.getYieldcurveData,
-    variables: {name:'bondwave'}
-  });
 
+const getAuthToken =async () =>'test123'
+
+export async function getYieldCurveData() {
+  try{
+      const authToken = await getAuthToken()
+        console.log(authToken)
+        const response: any = await API.graphql({  
+        query: queries.getYieldcurveData,
+        variables: {name:'bondwave'},
+        authToken
+  })
 
   const data: YieldCurveData = {
     curve_date: '',
     items: response.data.getYieldcurves,
   };
-  return data;
+  return data
+  }
+  catch(error){
+    console.log(error)
+  };
+  const ret: YieldCurveData = {
+    curve_date: '',
+    items: []
+  }
+  return ret
 }
 
 export { YieldCurveData };

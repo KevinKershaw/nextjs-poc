@@ -1,4 +1,5 @@
-import { createTheme, PaletteOptions, ThemeOptions } from '@mui/material/styles'
+import { createTheme, PaletteOptions, responsiveFontSizes, ThemeOptions } from '@mui/material/styles'
+import { ResponsiveFontSizesOptions } from '@mui/material/styles/responsiveFontSizes'
 
 const MSRB_BLUE = '#005397'
 
@@ -22,15 +23,17 @@ const themeOptions: ThemeOptions = {
     //fontSize: 16, fontFace: Roboto
     h1: { fontSize: '3.5rem', fontWeight: 600 }, // hero section title
     h2: { fontSize: '2.8125rem', fontWeight: 600 }, // other section title
-    h3: { fontSize: '1.375rem', fontWeight: 600 }, // not sure what the definition is, sub-section?
-    //h4: { fontSize: '1.Xrem' }, // not in use
-    //h5: { fontSize: '1.Xrem' }, // not in use
-    h6: { fontSize: '1.0rem', fontWeight: 500 }, // emphasized text against body1, 500 might not be in the packaged font
-    //subtitle1: { fontWeight: 600, }, // not in use
-    //subtitle2: { fontWeight: 600, }, // not in use
+    h3: { fontSize: '2.25rem', fontWeight: 600 },
+    h4: { fontSize: '1.75rem', fontWeight: 500 },
+    h5: { fontSize: '1.375rem', fontWeight: 500 },
+    h6: { fontSize: '1.2rem', fontWeight: 500 },
+    subtitle1: { fontSize: '1.0rem', fontWeight: 600, },
+    subtitle2: { fontSize: '0.875rem', fontWeight: 500, },
     body1: { fontSize: '1.0rem', fontWeight: 400 }, // normal body text
     body2: { fontSize: '0.875rem', fontWeight: 400 }, // less important text
-    button: { fontWeight: 'bold', textTransform: 'none' },
+    caption: { fontSize: '0.75rem', fontWeight: 400 },
+    overline: { fontSize: '0.625rem', fontWeight: 400 },
+    button: { fontSize: '1.0rem', fontWeight: 'bold', textTransform: 'none',  },
   },
 
   components: {
@@ -66,9 +69,9 @@ const themeOptions: ThemeOptions = {
   // },
   //},
 }
+const rfsOptions: ResponsiveFontSizesOptions = {breakpoints: ['xs', 'sm', 'md', 'lg']}
+const theme = responsiveFontSizes(createTheme({ ...themeOptions, palette: lightPalette }), rfsOptions)
 
-const theme = createTheme({ ...themeOptions, palette: lightPalette })
-
-export const darkTheme = createTheme({ ...themeOptions, palette: darkPalette })
+export const darkTheme = responsiveFontSizes(createTheme({ ...themeOptions, palette: darkPalette }), rfsOptions)
 
 export default theme
