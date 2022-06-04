@@ -24,6 +24,20 @@ const NavPanels = () => {
       </Grid>
 
       <Grid item>
+        <Button onClick={() => NavTo('/yield-curves/all-in-one')}>
+          <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box p={2} sx={{ textAlign: 'left' }}>
+              <Typography variant='h4' gutterBottom>
+                Yield Curves &amp; Indices (Alternate Version)
+              </Typography>
+              <Typography variant='body1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Typography>
+            </Box>
+          </Card>
+        </Button>
+      </Grid>
+
+      <Grid item>
         <Button onClick={() => NavTo('/market-statistics')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
             <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>

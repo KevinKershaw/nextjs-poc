@@ -4,8 +4,8 @@ import React from 'react'
 
 const AboutTech = () => {
   return (
-    <Stack>
-      <Box px={8} py={4}>
+    <Stack px={8} pb={4}>
+      <Box>
         <Typography variant='h4' gutterBottom>
           <NLink href='/about/tech' passHref>
             <Link>
