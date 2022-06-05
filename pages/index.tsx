@@ -8,8 +8,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Stack spacing={3}>
-        <TopBand />
         <New />
+        <TopBand />
         <AboutTech />
       </Stack>
     </>

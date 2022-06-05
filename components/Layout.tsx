@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Box, Container, Paper } from '@mui/material'
-import Header from './Header'
+import Header from 'components/Header'
 import Footer from './Footer'
 
 const Layout = ({ children }: { children: ReactNode }) => {

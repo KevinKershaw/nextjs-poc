@@ -27,37 +27,37 @@ const SelectProvider = ({externalSelectHandler}: {externalSelectHandler?: (sel: 
       </Typography>
       <Grid container spacing={2}>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('bloomberg')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('bloomberg')}>
             <Image src={bloombergImage} height={38} width={175} style={{marginTop: 3}} alt='Bloomberg' />
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('bondwave')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('bondwave')}>
             <Image src={bondwaveImage} height={38} width={161} alt='BondWave' />
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('ice')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('ice')}>
             <Image src={iceImage} height={51} width={60} alt='ICE' />
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('ihs')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('ihs')}>
             <Image src={ihsMarkitImage} height={39} width={144} alt='IHS' />
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('mbis')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('mbis')}>
             <Image src={mbisImage} height={38} width={111}  style={{marginTop: 3}} alt='MBIS'/>
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('snp')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('snp')}>
             <Image src={snpImage} height={40} width={113} alt='SNP' />
           </SelectableButton>
         </Grid>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 200 }} onClicked={() => handleSelect('treasury')}>
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('treasury')}>
             <Typography variant='h4' sx={{ fontWeight: 'bold' }}>US Treasury</Typography>
           </SelectableButton>
         </Grid>
