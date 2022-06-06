@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import type { YieldCurveData } from 'lib/model'
 import { foldTable } from 'lib/foldTable'
 import SimpleTable from './SimpleTable'
@@ -21,7 +21,7 @@ const Component = ({ data }: { data: YieldCurveData }) => {
   const [numCols, setNumCols] = useState(2)
   const { width } = useWindowSize()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setNumCols(getColCount(width))
   }, [width])
 
