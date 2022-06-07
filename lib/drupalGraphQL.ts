@@ -3,7 +3,6 @@ import { ApolloClient, InMemoryCache, NormalizedCacheObject, gql } from '@apollo
 let client: ApolloClient<NormalizedCacheObject> | undefined = undefined
 
 const drupalClient = (): ApolloClient<NormalizedCacheObject> => {
-  console.log(`url: ${process.env.DRUPAL_GRAPHQL}`)
   if (client === undefined) {
     client = new ApolloClient({
       uri: process.env.DRUPAL_GRAPHQL,

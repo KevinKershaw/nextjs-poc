@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AppBar, Grid, Toolbar, useScrollTrigger } from '@mui/material'
 import Head from 'next/head'
 import HamburgerMenu from './HamburgerMenu'
@@ -29,7 +29,7 @@ const EmmaHeader = () => {
     threshold: 0,
   })
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setElevationEffect(bodyScrolled)
   }, [bodyScrolled])
 

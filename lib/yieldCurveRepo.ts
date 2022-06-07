@@ -49,7 +49,6 @@ const getAuthToken =async () =>'test123'
 export async function getYieldCurveData() {
   try{
       const authToken = await getAuthToken()
-        console.log(authToken)
         const response: any = await API.graphql({  
         query: queries.getYieldcurveData,
         variables: {name:'bondwave'},

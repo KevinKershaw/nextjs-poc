@@ -11,7 +11,6 @@ const Combined = () => {
   const [providerData, setProviderData] = useState<YieldCurveProviderData>({ data: { curve_date: '', items: [] }, list1: [], list2: [], list3: [], list4: [] })
 
   const providerChangeHandler = (id: string) => {
-    console.log('providerChangeHandler', 'id', id)
     const newVal = id === selectedProvider ? null : id
     setSelectedProvider(newVal)
     if (newVal === null) {

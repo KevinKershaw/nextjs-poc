@@ -1,6 +1,6 @@
 import React from 'react'
 import NLink from 'next/link'
-import { Box, Card, Grid, Link, List, ListItem, Stack, Typography } from '@mui/material'
+import { Box, Card, Link, Stack, Typography } from '@mui/material'
 import Tx from 'components/Tx/Tx'
 
 const Band = () => {
@@ -64,8 +64,19 @@ const Band = () => {
           <Tx tx={{ attributes: { variant: 'body1', text: 'And an example using MSRB rules', gutterBottom: true } }} />
           <ul style={{ listStyle: 'none' }}>
             <li>
-              <NLink href='/msrb-rules' passHref>
+              <NLink href='/ssg/msrb-rules-strapi' passHref>
                 <Link>MSRB Rules (SSG)</Link>
+              </NLink>
+            </li>
+          </ul>
+        </Card>
+        <Card elevation={4} sx={{ width: 400, p: 2 }}>
+          <Tx tx={{ attributes: { variant: 'h3', text: 'Contentful', href: 'https://www.contentful.com/', gutterBottom: true } }} />
+          <Tx tx={{ attributes: { variant: 'body1', text: 'A modern content platform', gutterBottom: true } }} />
+          <ul style={{ listStyle: 'none' }}>
+            <li>
+              <NLink href='/ssg/YieldCurveContentful' passHref>
+                <Link>SSG</Link>
               </NLink>
             </li>
           </ul>
@@ -82,6 +93,17 @@ const Band = () => {
             <li>
               <NLink href='/ssr/rules' passHref>
                 <Link>MSRB Rules (SSR)</Link>
+              </NLink>
+            </li>
+          </ul>
+        </Card>
+        <Card elevation={4} sx={{ width: 400, p: 2 }}>
+          <Tx tx={{ attributes: { variant: 'h3', text: 'SVG to display CUSIPS', gutterBottom: true } }} />
+          <Tx tx={{ attributes: { variant: 'body1', text: 'An alternative to generating images', gutterBottom: true } }} />
+          <ul style={{ listStyle: 'none' }}>
+            <li>
+              <NLink href='/about/svg' passHref>
+                <Link>SVG Example</Link>
               </NLink>
             </li>
           </ul>

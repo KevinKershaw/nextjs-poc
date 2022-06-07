@@ -10,8 +10,6 @@ interface TableData {
 
 
 export const YieldCurveTable: React.FunctionComponent<{ data: YieldCurveData }> = ({ data }) => {
-  console.log("table data")
-
   const tdata: TableData[] = data.items.map(item => { return { yearstomaturity: item.yearstomaturity, yield: item.yield, id: item.yearstomaturity } })
   const columns = [
     { field: 'id', headerName: 'ID', width: 90, hide: true },
@@ -29,15 +27,12 @@ export const YieldCurveTable: React.FunctionComponent<{ data: YieldCurveData }> 
     }   
   ];
 
-  console.log(data, "table data")
-
   const count=4;
   const rows = [
 
     data.items.map((p) => p.yearstomaturity),
 
   ]
-  console.log(tdata, "tdata data")
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid rows={tdata} columns={columns} pageSize={10} rowsPerPageOptions={[5]}  rowHeight={32}/>

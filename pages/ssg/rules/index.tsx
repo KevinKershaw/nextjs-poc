@@ -14,7 +14,6 @@ const fetcher = async (url: string) => {
 }
 export const getStaticProps: GetStaticProps = async (context) => {
   let ruleArticles = await getRules()
-  console.log(`regenerating rules`)
   return {
     props: {
       articles: ruleArticles,

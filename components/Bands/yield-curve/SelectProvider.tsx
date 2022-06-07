@@ -10,12 +10,11 @@ import mbisImage from 'assets/yc/logos/mbis.png'
 import snpImage from 'assets/yc/logos/snp.png'
 import SelectableButton from 'components/Atoms/SelectableButton'
 
-const SelectProvider = ({externalSelectHandler}: {externalSelectHandler?: (sel: string) => void}) => {
-
-  const handleSelect = (id: string)  => {
-    if(externalSelectHandler){
+const SelectProvider = ({ externalSelectHandler }: { externalSelectHandler?: (sel: string) => void }) => {
+  const handleSelect = (id: string) => {
+    if (externalSelectHandler) {
       externalSelectHandler(id)
-   return 
+      return
     }
     router.push(`/yield-curves/${id}`)
   }
@@ -27,8 +26,8 @@ const SelectProvider = ({externalSelectHandler}: {externalSelectHandler?: (sel: 
       </Typography>
       <Grid container spacing={2}>
         <Grid item>
-          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('bloomberg')}>
-            <Image src={bloombergImage} height={38} width={175} style={{marginTop: 3}} alt='Bloomberg' />
+          <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => router.push(`/ssg/YieldCurveContentful`)}>
+            <Image src={bloombergImage} height={38} width={175} style={{ marginTop: 3 }} alt='Bloomberg' />
           </SelectableButton>
         </Grid>
         <Grid item>
@@ -48,7 +47,7 @@ const SelectProvider = ({externalSelectHandler}: {externalSelectHandler?: (sel: 
         </Grid>
         <Grid item>
           <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('mbis')}>
-            <Image src={mbisImage} height={38} width={111}  style={{marginTop: 3}} alt='MBIS'/>
+            <Image src={mbisImage} height={38} width={111} style={{ marginTop: 3 }} alt='MBIS' />
           </SelectableButton>
         </Grid>
         <Grid item>
@@ -58,7 +57,9 @@ const SelectProvider = ({externalSelectHandler}: {externalSelectHandler?: (sel: 
         </Grid>
         <Grid item>
           <SelectableButton sx={{ height: 60, width: 204 }} onClicked={() => handleSelect('treasury')}>
-            <Typography variant='h4' sx={{ fontWeight: 'bold' }}>US Treasury</Typography>
+            <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
+              US Treasury
+            </Typography>
           </SelectableButton>
         </Grid>
       </Grid>

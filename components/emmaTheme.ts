@@ -69,7 +69,7 @@ const themeOptions: ThemeOptions = {
   // },
   //},
 }
-const rfsOptions: ResponsiveFontSizesOptions = {breakpoints: ['xs', 'sm', 'md', 'lg']}
+const rfsOptions: ResponsiveFontSizesOptions = {breakpoints: ['xs', 'sm', 'md', 'lg', 'xl']}
 const theme = responsiveFontSizes(createTheme({ ...themeOptions, palette: lightPalette }), rfsOptions)
 
 export const darkTheme = responsiveFontSizes(createTheme({ ...themeOptions, palette: darkPalette }), rfsOptions)

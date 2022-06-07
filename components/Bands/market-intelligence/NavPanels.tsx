@@ -12,7 +12,7 @@ const NavPanels = () => {
       <Grid item>
         <Button onClick={() => NavTo('/yield-curves')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
-            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', backgroundImage: 'url(/images/mi-yc-tile.png)', backgroundPosition: 'right' }}></Box>
             <Box p={2} sx={{ textAlign: 'left' }}>
               <Typography variant='h4' gutterBottom>
                 Yield Curves &amp; Indices
@@ -26,7 +26,7 @@ const NavPanels = () => {
       <Grid item>
         <Button onClick={() => NavTo('/yield-curves/all-in-one')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
-            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', backgroundImage: 'url(/images/mi-yc-tile.png)', backgroundPosition: 'right' }}></Box>
             <Box p={2} sx={{ textAlign: 'left' }}>
               <Typography variant='h4' gutterBottom>
                 Yield Curves &amp; Indices (Alternate Version)
@@ -40,7 +40,7 @@ const NavPanels = () => {
       <Grid item>
         <Button onClick={() => NavTo('/market-statistics')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
-            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', backgroundImage: 'url(/images/mi-stats-tile.png)', backgroundPosition: 'right' }}></Box>
             <Box p={2} sx={{ textAlign: 'left' }}>
               <Typography variant='h4' gutterBottom>
                 Market Statistics
@@ -54,7 +54,7 @@ const NavPanels = () => {
       <Grid item>
         <Button onClick={() => NavTo('/new-issue-calendar')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
-            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', backgroundImage: 'url(/images/mi-nic-tile.png)', backgroundPosition: 'right' }}></Box>
             <Box p={2} sx={{ textAlign: 'left' }}>
               <Typography variant='h4' gutterBottom>
                 New Issue Calendar
@@ -68,7 +68,7 @@ const NavPanels = () => {
       <Grid item>
         <Button onClick={() => NavTo('market-research-reports')}>
           <Card elevation={2} sx={{ minWidth: 200, maxWidth: 400 }}>
-            <Box sx={{ height: 120, backgroundColor: '#00263a', color: 'white' }}>a picture perhaps</Box>
+            <Box sx={{ height: 120, backgroundColor: '#00263a', backgroundImage: 'url(/images/mi-reports-tile.png)', backgroundPosition: 'right' }}></Box>
             <Box p={2} sx={{ textAlign: 'left' }}>
               <Typography variant='h4' gutterBottom>
                 Market Research Reports

@@ -60,7 +60,7 @@ const MsrbRulesStrapi: NextPage<{ data: MsrbRule[] }> = ({ data }) => {
                   {data.map((item, ix) => (
                     <TableRow key={ix}>
                       <TableCell align='left'>
-                        <NLink href={`rules/${item.attributes.name}`} passHref>
+                        <NLink href={`/ssg/msrb-rules-strapi/${item.attributes.name}`} passHref>
                           <Link href='/'>{item.attributes.number}</Link>
                         </NLink>
                       </TableCell>

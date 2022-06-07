@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     `,
   })
-  const rdata = (data.msrbRules.data as { attributes: { name: string } }[]).map((i) => `/rules/${i.attributes.name}`)
+  const rdata = (data.msrbRules.data as { attributes: { name: string } }[]).map((i) => `/ssg/msrb-rules-strapi/${i.attributes.name}`)
   return {
     paths: rdata,
     fallback: false,
