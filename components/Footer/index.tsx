@@ -23,15 +23,19 @@ const EmmaFooter = () => {
         (MSRB)
       </Typography>
       <Typography variant='body2' sx={{ pb: 2 }}>
-        EMMA is a service of the Municipal Securities Rulemaking Board, which protects investors, state and local governments, and the public interest. Portions of EMMA data provided by ICE Data
-        Pricing &amp; Reference Data, LLC., CUSIP Global Services &amp; American Bankers Association.
+        EMMA is a service of the Municipal Securities Rulemaking Board, which protects investors, state and local governments, and the public interest. Portions
+        of EMMA data provided by ICE Data Pricing &amp; Reference Data, LLC., CUSIP Global Services &amp; American Bankers Association.
       </Typography>
       <Typography variant='body2'>
-        Ratings data are provided by the following and are reprinted with permission, and copyright notices for the respective owners are as follows: Copyright © 2022, Fitch, Inc. All rights reserved.
-        Copyright © 2022, Kroll Bond Rating Agency, Inc., and/or its licensors and affiliates (together, &quot;KBRA&quot;). All rights reserved. Copyright © 2022, Moody&apos;s Corporation,
-        Moody&apos;s Investors Service, Inc., Moody&apos;s Analytics, Inc. and/or their licensors and affiliates (collectively, &quot;MOODY&apos;S&quot;). All rights reserved. Copyright © 2022,
-        Standard and Poor&apos;s Financial Services LLC. All rights reserved.
+        Ratings data are provided by the following and are reprinted with permission, and copyright notices for the respective owners are as follows: Copyright
+        © 2022, Fitch, Inc. All rights reserved. Copyright © 2022, Kroll Bond Rating Agency, Inc., and/or its licensors and affiliates (together,
+        &quot;KBRA&quot;). All rights reserved. Copyright © 2022, Moody&apos;s Corporation, Moody&apos;s Investors Service, Inc., Moody&apos;s Analytics, Inc.
+        and/or their licensors and affiliates (collectively, &quot;MOODY&apos;S&quot;). All rights reserved. Copyright © 2022, Standard and Poor&apos;s
+        Financial Services LLC. All rights reserved.
       </Typography>
+      <Box display='flex' justifyContent='flex-end'>
+        <Typography sx={{ fontSize: 12 }}>version: {process.env.BUILD_VERSION}</Typography>
+      </Box>
     </Box>
   )
 }
