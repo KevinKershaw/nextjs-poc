@@ -1,6 +1,6 @@
 import React from 'react'
 import type { NextPage } from 'next'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import type { YieldCurveData } from 'lib/model'
 import { getYieldCurveData } from 'lib/yieldCurveRepo'
 import YieldCurveLayout from 'components/YieldCurveLayout2'
@@ -14,12 +14,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       data,
       list1,
-      list2
+      list2,
     },
   }
 }
 
-const YieldCurve: NextPage<{ data: YieldCurveData, list1: TxData[], list2: TxData[] }> = ({ data, list1, list2 }) => {
+const YieldCurve: NextPage<{ data: YieldCurveData; list1: TxData[]; list2: TxData[] }> = ({ data, list1, list2 }) => {
   return <YieldCurveLayout data={data} list1={list1} list2={list2} />
 }
 

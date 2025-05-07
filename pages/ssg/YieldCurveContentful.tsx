@@ -8,6 +8,7 @@ import { getYieldCurveByType } from 'lib/contentfulApi'
 import { GetStaticProps, NextPage } from 'next'
 import { Item } from 'lib/models/contentful'
 import Image from 'next/image'
+import bloombergImage from 'assets/yc/logos/bloomberg.png'
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id as string
@@ -33,11 +34,9 @@ const YieldCurveContentful: NextPage<{ data: YieldCurveData; cmsData: Item }> = 
             }}>
             &#8592; Back
           </Button>
-          {cmsData.logo && (
-            <Box sx={{ pl: 0.5 }}>
-              <Image src={cmsData.logo.url} height={38} width={175} alt='Bloomberg' />
-            </Box>
-          )}
+          <Box sx={{ pl: 0.5 }}>
+            <Image src={bloombergImage} height={38} width={175} alt='Bloomberg' />
+          </Box>
           <Typography variant='h5'>{cmsData.title}</Typography>
         </Box>
         <Stack spacing={8} sx={{ mx: 5, mt: 4, mb: 6 }}>
@@ -46,13 +45,13 @@ const YieldCurveContentful: NextPage<{ data: YieldCurveData; cmsData: Item }> = 
             <FoldedTable data={data} />
           </Box>
         </Stack>
-        <Box display={'flex'} sx={{ borderTop: '1px solid lightgray', backgroundColor: '#ccecfc', px: 5, py: 3, gap: 4, flexDirection: { lg: 'row', xs: 'column' } }}>
+        <Box
+          display={'flex'}
+          sx={{ borderTop: '1px solid lightgray', backgroundColor: '#ccecfc', px: 5, py: 3, gap: 4, flexDirection: { lg: 'row', xs: 'column' } }}>
           <Box minWidth={{ lg: 350, xs: 'unset' }}>
-            {cmsData.logo && (
-              <Typography>
-                <Image src={cmsData.logo.url} height={38} width={175} alt='Bloomberg' />
-              </Typography>
-            )}
+            <Typography>
+              <Image src={bloombergImage} height={38} width={175} alt='Bloomberg' />
+            </Typography>
             <Typography>{cmsData.summary}</Typography>
           </Box>
         </Box>

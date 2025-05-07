@@ -39,7 +39,11 @@ const YieldCurveLayout = ({ data, list1, list2 }: { data: YieldCurveData; list1:
           </Tabs>
           <Box sx={{ borderTop: '1px solid lightgray', marginTop: 0.5 }}>
             <TabPanel value={tabIndex} index={0}>
-              <SimpleTable rows={data.items.map((i) => [i.yearstomaturity.toString(), `${i.yield}%`])} headers={['Years to Maturity', 'Yield']} width={250} />
+              <SimpleTable
+                rows={data.rows ? data.rows?.map((i) => [i.yearsToMaturity.toString(), `${i.yield}%`]) : []}
+                headers={['Years to Maturity', 'Yield']}
+                width={250}
+              />
             </TabPanel>
             <TabPanel value={tabIndex} index={1}>
               Coming soon ...

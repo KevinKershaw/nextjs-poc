@@ -70,11 +70,11 @@ const YieldCurveChart: React.FunctionComponent<{ data: YieldCurveData }> = ({ da
   }
 
   let chartCfg: ChartData<'line', (number | ScatterDataPoint)[], unknown> = {
-    labels: data.items.map((p) => p.yearstomaturity),
+    labels: data.rows?.map((p) => p.yearsToMaturity),
     datasets: [
       {
         label: 'Yield Curve',
-        data: data.items.map((p) => p.yield),
+        data: data.rows ? data.rows?.map((p) => p.yield) : [],
         fill: true,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1,

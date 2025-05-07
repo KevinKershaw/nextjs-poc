@@ -35,8 +35,7 @@ const YieldCurveLayout = ({ data }: { data: YieldCurveData }) => {
     setShowChart(show)
   }
 
-  var adjData = foldTable(['Years', 'Yield'], data.items.map((i) => [i.yearstomaturity.toString(), `${i.yield}%`]), 6)
- 
+  var adjData = foldTable(['Years', 'Yield'], data.rows ? data.rows?.map((i) => [i.yearsToMaturity.toString(), `${i.yield}%`]) : [], 6)
 
   return (
     <>
@@ -45,7 +44,8 @@ const YieldCurveLayout = ({ data }: { data: YieldCurveData }) => {
           <Typography variant='subtitle1'>Yield Curves and Indices</Typography>
           <Typography variant='h5'>BondWave AA QCurve</Typography>
           <Typography variant='subtitle2' gutterBottom>
-            The BondWave AA QCurve is a quantitatively derived yield curve built from executed trades offering full data transparency. Data are available for 03/01/2017 through 04/14/2022.
+            The BondWave AA QCurve is a quantitatively derived yield curve built from executed trades offering full data transparency. Data are available for
+            03/01/2017 through 04/14/2022.
           </Typography>
           <Typography variant='body2'>
             <Link href='https://www.msrb.org/~/media/Files/EMMA/BondWave-Methodology.ashx' target='_blank' rel='noreferrer'>
@@ -89,10 +89,11 @@ const YieldCurveLayout = ({ data }: { data: YieldCurveData }) => {
               QCurves™ © BondWave LLC 2018-2022. All rights reserved. QCurves™ powered by Effi™. All rights reserved.
             </Typography>
             <Typography variant='body2' gutterBottom>
-              The MSRB does not review or independently verify the accuracy, completeness, timeliness, methodology used in or other aspects of the index values, indices or other data or information
-              provided by third-party providers. The products or services displayed on EMMA are among those available in the marketplace. The display of any particular third-party product or service
-              on the EMMA website by trade name, trademark, manufacturer, or otherwise does not constitute or imply the MSRB’s sponsorship, approval, affiliation, endorsement, recommendation, or
-              favoring of such product or service.
+              The MSRB does not review or independently verify the accuracy, completeness, timeliness, methodology used in or other aspects of the index values,
+              indices or other data or information provided by third-party providers. The products or services displayed on EMMA are among those available in
+              the marketplace. The display of any particular third-party product or service on the EMMA website by trade name, trademark, manufacturer, or
+              otherwise does not constitute or imply the MSRB’s sponsorship, approval, affiliation, endorsement, recommendation, or favoring of such product or
+              service.
             </Typography>
           </Box>
         </Card>

@@ -38,7 +38,9 @@ const Band = () => {
         </Card>
         <Card elevation={4} sx={{ width: 400, p: 2 }}>
           <Tx tx={{ attributes: { variant: 'h3', text: 'Strapi', href: 'https://strapi.io', gutterBottom: true } }} />
-          <Tx tx={{ attributes: { variant: 'body1', text: 'A hot new CMS, same examples with the text content coming from Strapi CMS', gutterBottom: true } }} />
+          <Tx
+            tx={{ attributes: { variant: 'body1', text: 'A hot new CMS, same examples with the text content coming from Strapi CMS', gutterBottom: true } }}
+          />
           <ul style={{ listStyle: 'none' }}>
             <li>
               <NLink href='/ssg/YieldCurveStrapi' passHref>
@@ -61,14 +63,14 @@ const Band = () => {
               </NLink>
             </li>
           </ul>
-          <Tx tx={{ attributes: { variant: 'body1', text: 'And an example using MSRB rules', gutterBottom: true } }} />
+          {/* <Tx tx={{ attributes: { variant: 'body1', text: 'And an example using MSRB rules', gutterBottom: true } }} />
           <ul style={{ listStyle: 'none' }}>
             <li>
               <NLink href='/ssg/msrb-rules-strapi' passHref>
                 <Link>MSRB Rules (SSG)</Link>
               </NLink>
             </li>
-          </ul>
+          </ul> */}
         </Card>
         <Card elevation={4} sx={{ width: 400, p: 2 }}>
           <Tx tx={{ attributes: { variant: 'h3', text: 'Contentful', href: 'https://www.contentful.com/', gutterBottom: true } }} />
@@ -81,7 +83,7 @@ const Band = () => {
             </li>
           </ul>
         </Card>
-        <Card elevation={4} sx={{ width: 400, p: 2 }}>
+        {/* <Card elevation={4} sx={{ width: 400, p: 2 }}>
           <Tx tx={{ attributes: { variant: 'h3', text: 'Drupal', href: 'https://www.drupal.org', gutterBottom: true } }} />
           <Tx tx={{ attributes: { variant: 'body1', text: 'An industry heavy weight CMS, examples using MSRB Rules', gutterBottom: true } }} />
           <ul style={{ listStyle: 'none' }}>
@@ -96,8 +98,8 @@ const Band = () => {
               </NLink>
             </li>
           </ul>
-        </Card>
-        <Card elevation={4} sx={{ width: 400, p: 2 }}>
+        </Card> */}
+        {/* <Card elevation={4} sx={{ width: 400, p: 2 }}>
           <Tx tx={{ attributes: { variant: 'h3', text: 'SVG to display CUSIPS', gutterBottom: true } }} />
           <Tx tx={{ attributes: { variant: 'body1', text: 'An alternative to generating images', gutterBottom: true } }} />
           <ul style={{ listStyle: 'none' }}>
@@ -107,7 +109,7 @@ const Band = () => {
               </NLink>
             </li>
           </ul>
-        </Card>
+        </Card> */}
       </Box>
     </Stack>
   )

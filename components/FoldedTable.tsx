@@ -24,11 +24,7 @@ const Component = ({ data }: { data: YieldCurveData }) => {
     setNumCols(getColCount(width))
   }, [width])
 
-  var adjData = foldTable(
-    ['Years', 'Yield'],
-    data.items.map((i) => [i.yearstomaturity.toString(), `${i.yield}%`]),
-    numCols,
-  )
+  var adjData = foldTable(['Years', 'Yield'], data.rows ? data.rows?.map((i) => [i.yearsToMaturity.toString(), `${i.yield}%`]) : [], numCols)
 
   if (width === undefined) {
     return null

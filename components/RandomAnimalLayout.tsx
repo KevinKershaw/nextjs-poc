@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Box, Button, Divider, Grid, Stack, Typography } from '@mui/material'
 import { BasicArticle } from 'lib/randomRepo'
 import React from 'react'

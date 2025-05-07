@@ -30,16 +30,15 @@ class Login extends React.Component {
     return (
       <>
         <>
-          <Box sx={{ bgcolor: '#003668', py: 8, }} justifyContent='center' alignItems='center' >
+          <Box sx={{ bgcolor: '#003668', py: 8 }} justifyContent='center' alignItems='center'>
             <Container maxWidth='xs'>
-              <Box justifyContent='center' alignItems='center' width={400} sx={{ bgcolor: '#ffffff', p: 2, }} >
+              <Box justifyContent='center' alignItems='center' width={400} sx={{ bgcolor: '#ffffff', p: 2 }}>
                 <form
                   method='post'
                   onSubmit={(event) => {
                     this.handleSubmit(event)
                     router.push(`/dashboard/profile`)
-                  }}
-                >
+                  }}>
                   <Stack spacing={2} justifyContent='center'>
                     <Box sx={{ mt: 3 }}>
                       <Image src='/images/msrb-logo.png' width={182} height={50} alt='Municipal Securities Rulemaking Board' />
@@ -55,6 +54,7 @@ class Login extends React.Component {
                     <NLink href='/' passHref>
                       <Link href='/'>Reset or forgot password?</Link>
                     </NLink>
+                    <Typography variant='body2'>Use &apos;john&apos; and &apos;pass&apos;</Typography>
                   </Stack>
                 </form>
               </Box>
